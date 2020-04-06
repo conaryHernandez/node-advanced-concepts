@@ -9,12 +9,12 @@ env:
   - NODE_ENV=ci PORT=3000
 cache:
   directories:
-    - NodeAdvanced/node_modules
-    - NodeAdvanced/client/node_modules
+    - node_modules
+    - client/node_modules
 install:
-  - npm install --prefix NodeAdvanced
-  - npm run build --prefix NodeAdvanced
+  - npm install --prefix
+  - npm run build --prefix
 script:
-  - nohup npm run start & --prefix NodeAdvanced
+  - nohup npm run start & --prefix
   - sleep 3
-  - npm run test --prefix NodeAdvanced
+  - npm run test --prefix
