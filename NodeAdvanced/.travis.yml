@@ -1,0 +1,20 @@
+language: node_js
+node_js:
+  - '8'
+dist: trusty
+services:
+  - mongodb
+  - redis-server
+env:
+  - NODE_ENV=ci PORT=3000
+cache:
+  directories:
+    - NodeAdvanced/node_modules
+    - NodeAdvanced/client/node_modules
+install:
+  - npm install --prefix NodeAdvanced
+  - npm run build --prefix NodeAdvanced
+script:
+  - nohup npm run start & --prefix NodeAdvanced
+  - sleep 3
+  - npm run test --prefix NodeAdvanced
