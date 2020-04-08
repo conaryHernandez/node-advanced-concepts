@@ -6,6 +6,8 @@ const requireLogin = require('../middlewares/requireLogin');
 const s3 = new AWS.S3({
   accessKeyId: keys.accessKeyId,
   secretAccessKey: keys.secretAccessKey,
+  signatureVersion: 'v4',
+  region: 'us-east-2',
 });
 
 module.exports = (app) => {
