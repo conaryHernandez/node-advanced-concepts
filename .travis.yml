@@ -21,6 +21,5 @@ cache:
 install:
   - npm install --prefix NodeAdvanced
   - npm run build --prefix NodeAdvanced
-  - nohup npm run start & --prefix NodeAdvanced
   - sleep 3
   - npm run test --prefix NodeAdvanced
